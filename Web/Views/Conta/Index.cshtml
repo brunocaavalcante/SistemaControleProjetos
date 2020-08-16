@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Web.ViewModels.ContaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Saldo</h3>
+<!---h2>Model.Saldo</!--h2-->
+
+<p>
+    <a asp-action="Create">Deposito</a>
+    <a asp-action="Saque">Saque</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.OperacaoViewModel.DataOperacao)</th>
+            <th>@Html.DisplayNameFor(model => model.OperacaoViewModel.Natureza)</th>
+            <th>@Html.DisplayNameFor(model => model.OperacaoViewModel.Descricao)</th>
+            <th> @Html.DisplayNameFor(model => model.OperacaoViewModel.Valor)</th>
+            <th>@Html.DisplayNameFor(model => model.OperacaoViewModel.Status)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperacaoViewModel.DataOperacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperacaoViewModel.Natureza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperacaoViewModel.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperacaoViewModel.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperacaoViewModel.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
