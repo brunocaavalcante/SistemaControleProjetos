@@ -54,3 +54,15 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+.homeBackgound2 {
+    background: rgb(8 49 99 / 61%);
+    width: 824px;
+    position: absolute;
+    height: 990px;
+    top: 99px;
+}
+.txtTituloBranco {
+    left: 50%;
+    POSITION: ABSOLUTE;
+    top: 379px;
+}
