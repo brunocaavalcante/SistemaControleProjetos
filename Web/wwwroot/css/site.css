@@ -66,3 +66,8 @@ body {
     POSITION: ABSOLUTE;
     top: 379px;
 }
+.centraliza {
+    left: 35%;
+    top: 50%;
+    position: relative;
+}

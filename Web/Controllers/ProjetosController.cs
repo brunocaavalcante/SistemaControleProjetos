@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Business.Models;
 using Data.Context;
+using AutoMapper;
 
 namespace Web.Controllers
 {
     public class ProjetosController : Controller
     {
         private readonly MyDbContext _context;
+        private readonly IMapper _mapper;
 
-        public ProjetosController(MyDbContext context)
+        public ProjetosController(MyDbContext context,
+                                    IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: Projetos

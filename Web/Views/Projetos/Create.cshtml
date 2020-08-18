@@ -1,21 +1,26 @@
-﻿@model Business.Models.ProjetoModel
+﻿@model Web.ViewModels.ProjetoViewModel
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>ProjetoModel</h4>
+<h4 class="centraliza" style="margin-top: 14px;">Criar Novo Projeto</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 centraliza" style="background: rgb(241 241 242);">
         <form asp-action="Create">
+            <br />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label">Descrição do Projeto</label>
+                <textarea asp-for="Descricao" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataInicio" class="control-label"></label>
@@ -28,15 +33,16 @@
                 <span asp-validation-for="DataFim" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="CRIAR" class="btn btn-primary btn-sm btn-block" />
             </div>
+            <div>
+                <a class="btn btn-danger btn-sm btn-block" asp-action="Index">VOLTAR</a>
+            </div><br /><br />
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
